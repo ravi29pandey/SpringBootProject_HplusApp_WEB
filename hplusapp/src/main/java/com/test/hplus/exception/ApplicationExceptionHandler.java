@@ -1,6 +1,9 @@
 package com.test.hplus.exception;
 
 
+import com.test.hplus.beans.Login;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -12,7 +15,11 @@ public class ApplicationExceptionHandler {
         System.out.println("in global  exception handler of login Controller");
         return "error";  //Show ViewName
     }
+@ExceptionHandler(LoginFailureException.class)
+    public ResponseEntity handleLoginFailure(LoginFailureException ex){
 
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(ex.getMessage());
+}
 
 
 }
