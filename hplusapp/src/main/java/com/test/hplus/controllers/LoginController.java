@@ -40,7 +40,6 @@ public class LoginController {
       * already the landing page is defined under session */
     }
 
-
     @ExceptionHandler(ApplicationException.class)  //*telling exceptionHandler to handle which class*//*
     public String handleException(){
        System.out.println("in exception handler of login Controller");

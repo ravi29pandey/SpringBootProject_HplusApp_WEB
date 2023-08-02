@@ -10,7 +10,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="hplusapp" target="1.8" />
       <module name="HplusApp DEV" target="8" />
     </bytecodeTargetLevel>
   </component>

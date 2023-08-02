@@ -34,7 +34,7 @@ public class ApplicationConfig extends WebMvcConfigurationSupport {
 @Bean is a method-level annotation and a direct analog of the XML <bean/> element.
 The annotation supports most of the attributes offered by <bean/> ,
 such as: init-method , destroy-method , autowiring , lazy-init ,
-dependency-check , depends-on and scope .*/
+dependency-check , depends-on and scope 2022.*/
     @Bean
     public InternalResourceViewResolver jspViewResolver(){
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
@@ -53,7 +53,7 @@ dependency-check , depends-on and scope .*/
 /*this method helps for Async support (non-blocking i/o)*/
 @Override
 protected void configureAsyncSupport(AsyncSupportConfigurer configurer) {
-    configurer.setDefaultTimeout(5000);//Timeout in 5sec do this only if needed
+    configurer.setDefaultTimeout(500);//Timeout in 5sec do this only if needed
     configurer.setTaskExecutor(mvcTaskExecutor());
 }
 /*this task executor allocate threads to serve with max size and many others*/
@@ -85,7 +85,7 @@ public AsyncTaskExecutor mvcTaskExecutor(){
      public ThemeResolver themeResolver(){
             CookieThemeResolver cookieThemeResolver=new CookieThemeResolver();
             cookieThemeResolver.setCookieName("theme");
-            cookieThemeResolver.setDefaultThemeName("client-theme1");
+            cookieThemeResolver.setDefaultThemeName("client-theme2");
             return  cookieThemeResolver;
         }
 
